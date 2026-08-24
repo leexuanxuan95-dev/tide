@@ -24,10 +24,10 @@
 <p>No. Tide runs entirely on-device. Your coordinates are used locally to suggest nearby NOAA stations and to compute sun, moon, and solunar times. Nothing leaves your phone.</p>
 
 <h3>Why is the predicted tide a few minutes off from NOAA's published table?</h3>
-<p>v1.0 uses a simplified harmonic predictor (no Schureman nodal corrections — the f and u factors are treated as constants). This produces tides that are accurate to a handful of minutes in normal conditions. v1.1 will ship full Schureman corrections.</p>
+<p>Tide runs a harmonic predictor that does not evaluate the Schureman node factor and equilibrium argument at run time; instead the bundled constants carry NOAA's published amplitudes and phases rotated into the app's epoch, with f and u folded in when the catalog is built. Measured against NOAA's own published high and low water at sixteen stations that were not used to prepare the data, half the tide turns land within 2 minutes and nine in ten within 6 minutes. Because f and u are fixed at the build epoch, the fit drifts slowly with the 18.6-year lunar nodal cycle, so the catalog is rebuilt periodically.</p>
 
 <h3>Can I add a station that isn't in the list?</h3>
-<p>Not yet. v1.0 ships ~3,000 US NOAA CO-OPS stations + selected international ports. v1.1 adds custom station harmonic-constant entry.</p>
+<p>Not yet. Tide ships every NOAA CO-OPS station that publishes both harmonic constants and a tidal datum — 1,310 stations, 1,285 of them in the US and its territories. Stations NOAA predicts by offsets from a reference station, rather than by its own harmonic constants, are not included. If the water you fish is missing, email us and we will tell you the nearest station NOAA does publish.</p>
 
 <h3>How do I cancel my subscription?</h3>
 <p><em>Settings → Apple ID → Subscriptions → Tide → Cancel Subscription.</em> You'll retain Pro / Pro+ features until the end of your current billing period.</p>
@@ -35,8 +35,8 @@
 <h3>Restore purchases?</h3>
 <p>Open Tide → Settings → Restore purchases. Or open the paywall and tap Restore.</p>
 
-<h3>Apple Watch complication isn't showing</h3>
-<p>Confirm you have at least Tide Pro and that you've added a spot on the iPhone. Then long-press the watch face → Edit → swap a slot in for "Next Tide".</p>
+<h3>Is there an Apple Watch app or a widget?</h3>
+<p>No. Earlier builds shipped a Watch app and a widget that could never read your saved spot, so both were removed in 1.0.5 rather than left on the phone showing a permanent placeholder.</p>
 
 <p style="margin-top: 48px;"><a href="index.html">← back</a></p>
 </body>
